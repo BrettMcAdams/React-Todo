@@ -1,8 +1,20 @@
-import React from 'react';
+import React from 'react'
 import uuid from 'react-uuid'
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 import "./styles.css";
+import styled from 'styled-components'
+
+const StyledWhole = styled.div`
+  height: 100vh;
+  background: #FFB6C1;
+  text-align: center;
+  color: white;
+  h2 {
+    color: white;
+    font-size: 3rem;
+  }
+`
 
 const initialTodo = [
   {
@@ -55,13 +67,14 @@ class App extends React.Component {
     this.setState({
       todoData: [...this.state.todoData, newItem]
     });
+
   };
 
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
-      <>
+      <StyledWhole>
         <div>
           <h2>To Do</h2>
           <TodoForm addItem={this.addItem} />
@@ -72,7 +85,7 @@ class App extends React.Component {
           toggleDone={this.toggleDone}
           clearList={this.clearList}
         />
-      </>
+      </StyledWhole>
     );
   }
 }

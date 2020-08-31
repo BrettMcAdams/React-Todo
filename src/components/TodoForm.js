@@ -30,7 +30,7 @@ class TodoForm extends React.Component {
                     value={this.state.item}
                     onChange={this.handleChanges}
                 />
-                <button>Add</button>
+                <button variant="contained" color="primary">Add</button>
             </form>
         );
     }
